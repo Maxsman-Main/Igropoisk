@@ -5,18 +5,41 @@
     </button>
     <nav>
         <ul id="navigation" class="navigation flex" data-visible="false">
-            <li class="admin">
-                <a href="/content/admin/adminPanel.php">АДМИН ПАНЕЛЬ</a>
-            </li>
+            <?php
+                if($_SESSION["login"] == "admin"){
+                    echo(
+                        "<li class='admin'>
+                            <a href='/content/admin/adminPanel.php'>АДМИН ПАНЕЛЬ</a>
+                        </li>"
+                    );
+                }
+            ?>
             <li class="news">
                 <a href="/content/newsPage/news.php">НОВОСТИ</a>
             </li>
-            <li class="personal-area">
-                <a href="/content/personalPage/personalArea.php">ЛИЧНЫЙ КАБИНЕТ</a>
-            </li>
-            <li class="log-in">
-                <a href="/content/registration/registration.php">РЕГИСТРАЦИЯ / ВХОД</a>
-            </li>
+            <?php
+                if($_SESSION["login"] != NULL){
+                    echo(
+                        "<li class='personal-area'>
+                            <a href='/content/personalPage/personalArea.php'>ЛИЧНЫЙ КАБИНЕТ</a>
+                        </li>"
+                    );
+                }
+                if($_SESSION["login"] == NULL){
+                    echo(
+                        "<li class='log-in'>
+                            <a href='/content/registration/registration.php'>РЕГИСТРАЦИЯ / ВХОД</a>
+                        </li>"
+                    );
+                }
+                else{
+                    echo(
+                        "<li class='log-in'>
+                            <a href='/content/registration/out.php'>ВЫХОД</a>
+                        </li>"
+                    );
+                }
+            ?>
         </ul>
     </nav>
 </header>
