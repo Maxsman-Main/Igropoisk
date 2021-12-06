@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>News page</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
     <?php
@@ -14,6 +14,6 @@
             include './newsList.php';
         ?>  
     </div>
-    <script src="/js/menu.js"></script>
+    <script src="../../js/menu.js"></script>
 </body>
 </html>

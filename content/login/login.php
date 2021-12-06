@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
    <?php
@@ -27,6 +27,6 @@
         </form>
     </div>
 
-    <script src="/js/menu.js"></script>
+    <script src="../../js/menu.js"></script>
 </body>
 </html>
