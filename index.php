@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Игропоиск</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 </head>
 <body>

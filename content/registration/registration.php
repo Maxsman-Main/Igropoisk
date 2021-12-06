@@ -22,6 +22,7 @@
                     <label><i class="fa fa-unlock" aria-hidden="true"></i>Пароль</label>
                 </div>
                 <input type="button" class="button" value="Зарегистрироваться">
+                <a href="../login/login.php" style="margin-top: .5rem">Войти</a>
             </div>
         </form>
     </div>

@@ -5,6 +5,9 @@
     </button>
     <nav>
         <ul id="navigation" class="navigation flex" data-visible="false">
+            <li class="admin">
+                <a href="/content/admin/adminPanel.php">АДМИН ПАНЕЛЬ</a>
+            </li>
             <li class="news">
                 <a href="/content/newsPage/news.php">НОВОСТИ</a>
             </li>
@@ -12,7 +15,7 @@
                 <a href="/content/personalPage/personalArea.php">ЛИЧНЫЙ КАБИНЕТ</a>
             </li>
             <li class="log-in">
-                <a href="/content/regestration/regestration.php">РЕГИСТРАЦИЯ / ВХОД</a>
+                <a href="/content/registration/registration.php">РЕГИСТРАЦИЯ / ВХОД</a>
             </li>
         </ul>
     </nav>

@@ -157,7 +157,7 @@ header {
         cursor: pointer;
         display: block;
         position: absolute;
-        background: url("../images/menu.png") no-repeat;
+        background: url('/images/menu.png') no-repeat;
         aspect-ratio: 1;
         width: 2rem;
         top: 2rem;
@@ -216,6 +216,9 @@ header {
 
     .commentsField {
         align-items: center;
+    }
+    .commentsField > input {
+        min-width: 100%;
     }
 
     .login-box h1 {
@@ -353,6 +356,16 @@ header {
 .form-reg {
     flex-direction: column;
 }
+.form-reg > a {
+    color: hsl(var(--clr-dark-fnt));
+    font-style: var(--fnt-style-text);
+    font-size: 1rem;
+}
+.form-reg > a:hover {
+    color: hsl(var(--clr-light-fnt));
+    font-size: 1.2rem;
+    transition: .4s;
+}
 
 .button {
     width: 60%;
@@ -366,7 +379,8 @@ header {
 .button:hover {
     color: #fff;
     border: 2px solid white;
-    transition: .1s;
+    width: 100%;
+    transition: .4s;
 }
 
 .login-box h1 {
@@ -492,12 +506,20 @@ header {
     width: 60%;
 }
 
+.comment {
+    margin: 2rem 0 3rem 0;
+    font-family: var(--fnt-style-text);
+}
 
-
-
-
-
-
+.editDelete > a {
+    text-decoration: none;
+    aspect-ratio: 1;
+    font-size: 1.5rem;
+    color: hsl(var(--clr-dark-fnt));
+}
+.editDelete > a:hover {
+    color: white;
+}
 .flex {
     display: flex;
 }
