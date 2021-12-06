@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceberg&display=swap');
+
+/* Variables which using */
+:root {
+    --clr-dark-bg: 0, 0%, 25%;
+    --clr-light-bg: 0, 0%, 65%;
+    --clr-dark-fnt: 0, 0%, 0%;
+    --clr-light-fnt: 0, 0%, 100%;
+    --gap-header: 2rem;
+    --fnt-style-text: 'Roboto Slab', serif;
+    --fnt-style-title: 'Iceberg', cursive;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+body {
+    background: hsl(var(--clr-light-bg));
+    overflow-x: hidden;
+}
+
+header {
+    background: lightgray;
+    min-width: 100vw;
+    height: 6rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.icon {
+    margin: 3rem;
+    cursor: pointer;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+.navigation > li {
+    padding: var(--gap-header);
+}
+
+.navigation > li > a{
+    font-size: 20px;
+    font-family: var(--fnt-style-text);
+    text-decoration: none;
+    color: hsl(var(--clr-dark-fnt));
+}
+
+@media(max-width: 45em) {
+    .block-info {
+        padding: calc(20px + (40 - 20) * ((100vw - 45em) / (45em - 360px)));
+    }
+
+    .navigation {
+        position: fixed;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        background: hsl(var(--clr-dark-bg));
+        padding: min(20vh, 4rem) 1em;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+        z-index: 2;
+    }
+    .navigation > li > a {
+        color: hsl(var(--clr-light-fnt));
+    }
+
+    .mobile-nav-toggle {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        background: url("../images/menu.png") no-repeat;
+        aspect-ratio: 1;
+        width: 2rem;
+        top: 2rem;
+        right: 2rem;
+        border: none;
+        z-index: 99999;
+    }
+
+    .form-reg {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .allInfoAbout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .photo {
+        margin: 0 auto;
+    }
+
+    .account {
+        border: none;
+        border-bottom: 1px solid black;
+    }
+    .account > p {
+        margin-bottom: 3rem;
+    }
+
+    .statistic > h2 {
+        margin-top: 3rem;
+    }
+
+    .gamePic {
+        min-width: 30vw;
+    }
+
+    .textAbout {
+        margin: 2rem 0 2rem 0;
+        min-width: 100%;
+        overflow-y: scroll;
+    }
+
+    .fieldAbout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .com {
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    .commentsField {
+        align-items: center;
+    }
+
+    .login-box h1 {
+        text-align: center;
+    }
+
+    .newsBlock {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .newsImg {
+        min-width: 40vw;
+    }
+
+    .newsText {
+        margin-top: 2rem;
+        min-width: 100%;
+    }
+}
+
+.content {
+    margin: 8rem 8rem 8rem 8rem;
+    display: flex;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-item {
+    position: relative;
+    max-width: 15rem;
+    text-align: center;
+}
+
+.game-name {
+    font-family: var(--fnt-style-text);
+    margin: .5rem;
+}
+
+.gallery-item > img {
+    max-width: 100%;
+    height: 18rem;
+}
+.gallery-item > a {
+    font-family: var(--fnt-style-text);
+    text-decoration: none;
+    color: hsl(var(--clr-dark-fnt));
+    border-bottom: 1px solid black;
+}
+.gallery-item > a:hover {
+    color: hsl(var(--clr-light-fnt));
+    border-bottom: 1px solid white;
+}
+
+
+.about-us {
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.block-info {
+    font-family: var(--fnt-style-text);
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 0 3rem 0;
+    border-bottom: 2px solid black;
+}
+
+.st {
+    border-top: 2px solid black;
+}
+
+.line {
+    width: 100%;
+    border: 2px solid black;
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: hsl(var(--clr-light-bg));
+}
+
+.login-box .user-box {
+    position: relative;
+    font-family: var(--fnt-style-text);
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #000;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label{
+    top: -30px;
+    left: 0;
+    color: #000;
+    font-size: 16px;
+}
+
+.form-reg {
+    flex-direction: column;
+}
+
+.button {
+    width: 60%;
+    box-sizing: content-box;
+    cursor: pointer;
+    color: #000;
+    background: transparent;
+    font-family: var(--fnt-style-text);
+    border: 2px solid black;
+}
+.button:hover {
+    color: #fff;
+    border: 2px solid white;
+    transition: .1s;
+}
+
+.login-box h1 {
+    margin: 0 0 30px;
+    padding: 0;
+    font-family: var(--fnt-style-text);
+}
+
+.allInfoAbout {
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account > p {
+    font-size: 20px;
+    font-family: var(--fnt-style-text);
+    font-weight: bold;
+}
+
+.photo {
+    width: 40vw;
+    height: auto;
+    border: 2px solid black;
+    margin-bottom: 1rem;
+}
+
+.statistic {
+    height: 15rem;
+}
+
+.statistic > h2 {
+    font-family: var(--fnt-style-text);
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.textStat {
+    height: 5rem;
+    font-size: 20px;
+    font-family: var(--fnt-style-text);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.gameContent {
+    flex-direction: column;
+}
+
+.fieldAbout {
+    margin-top: 3rem;
+    justify-content: space-between;
+}
+
+.gamePic {
+    width: 20vw;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.gameAbout > p {
+    font-family: var(--fnt-style-text);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.textAbout {
+    font-weight: bold;
+    font-family: var(--fnt-style-text);
+    width: 60%;
+    height: 15rem;
+    font-size: 17px;
+}
+.textAbout::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f9f9fd;
+}
+.textAbout::-webkit-scrollbar-thumb {
+    background: hsl(var(--clr-dark-bg));
+}
+.textAbout::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    background-color: #f9f9fd;
+}
+
+.commentsField {
+    font-family: var(--fnt-style-text);
+    margin-top: 3rem;
+}
+
+.com {
+    margin-top: 3rem;
+}
+.com > h2 {
+    margin-bottom: 1rem;
+}
+.com > p {
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    padding-bottom: 1.5rem;
+}
+
+.newsBlock {
+    font-family: var(--fnt-style-text);
+    margin: 3rem 0 3rem 0;
+    padding-bottom: 3rem;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+
+.newsImg {
+    width: 20vw;
+    height: auto;
+
+}
+
+.newsText {
+    width: 60%;
+}
+
+
+
+
+
+
+
+.flex {
+    display: flex;
+}
+.grid {
+    display: grid;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
