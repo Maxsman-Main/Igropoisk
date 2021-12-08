@@ -10,7 +10,7 @@
 
     $game_info = get_game_info($_POST["gameID"], $conn);
 ?>
-<div class="fieldAbout flex style='width: 200px'">
+<div class="fieldAbout flex">
     <div class="gameAbout">
         <div class="gamePic"><img src="/images/games-img/<?php echo($_POST["gameID"]); ?>.jpg"></div>
         <p>
