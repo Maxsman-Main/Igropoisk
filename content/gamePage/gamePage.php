@@ -16,6 +16,7 @@
         <div class="gameContent flex">
             <?php
                 include './gameInfo.php';
+                include './gameComments.php';   
             ?>
         </div>
     </div>

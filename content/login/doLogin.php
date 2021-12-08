@@ -11,8 +11,8 @@
             $sql = "SELECT `password` FROM `users` WHERE `login` = '$login'";
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
-            if(password_verify($pass, $row["password"])){
-                echo(1);
+            $hashpass = $row['password'];
+            if(password_verify($pass, $hashpass)){
                 return true;
             }
             else{
@@ -25,15 +25,14 @@
         $password = $_POST["password"];
         
         check_user_data($login, $password, $conn);
-        /*
+        
         if(check_user_data($login, $password, $conn) == true){
             $_SESSION["login"] = $login;
-            header("Location: ./index.php");
+            header("Location: ../../index.php");
         }
         else{
             header("Location: ./login.php");
         }
-        */
     }
     else{
         header("Location: ../../index.php");

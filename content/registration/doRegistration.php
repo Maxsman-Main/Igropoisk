@@ -23,7 +23,8 @@
                 header("Location: ./registration.php");
             }
             else{
-                $sql = "INSERT INTO users (`login`, `password`) VALUES ('$login', '$password')";
+                $date = date('Y-m-d');
+                $sql = "INSERT INTO `users` (`login`, `password`, `reg_date`, `comments_count`) VALUES ('$login', '$password', '$date', 0)";
                 $conn->query($sql);
                 $_SESSION["login"] = $login;
                 header("Location: ../../index.php");
@@ -32,8 +33,7 @@
 
         $login = $_POST["login"];
         $password = $_POST["password"];
-        $hashpassword = password_hash($pass, PASSWORD_DEFAULT);
-
+        $hashpassword = password_hash($password, PASSWORD_DEFAULT);
         add_new_user($login, $hashpassword, $conn);
     }
     else{
