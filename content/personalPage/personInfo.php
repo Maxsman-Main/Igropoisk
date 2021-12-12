@@ -12,7 +12,7 @@
 ?>
 <div class="allInfoAbout flex">
     <div class="account">
-        <div class="photo"><img src="https://www.thelocal.se/wp-content/uploads/2018/12/6d67730d16af04f3f956389d4cc244af808b8381c23b1e3d218ecd792de14fa8.jpg"></div>
+        <div class="photo"><img src=<?php echo("/images/avatars/".$person_info["avatar_id"].".png"); ?>></div>
         <p>
             login: 
             <?php echo($person_info["login"]); ?>

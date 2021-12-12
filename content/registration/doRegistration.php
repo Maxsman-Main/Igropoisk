@@ -24,7 +24,8 @@
             }
             else{
                 $date = date('Y-m-d');
-                $sql = "INSERT INTO `users` (`login`, `password`, `reg_date`, `comments_count`) VALUES ('$login', '$password', '$date', 0)";
+                $random = rand(1, 32);
+                $sql = "INSERT INTO `users` (`login`, `password`, `reg_date`, `comments_count`, `avatar_id`) VALUES ('$login', '$password', '$date', 0, $random)";
                 $conn->query($sql);
                 $_SESSION["login"] = $login;
                 header("Location: ../../index.php");
